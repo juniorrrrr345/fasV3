@@ -16,7 +16,7 @@ const Contact = () => {
 
   return (
     <div className="min-h-screen cosmic-bg">
-      <div className="pt-20 pb-20 md:pb-32 px-4">
+      <div className="pt-20 pb-32 md:pb-8 px-4">
         <div className="max-w-4xl mx-auto">
           {/* Header */}
           <motion.div
