@@ -2,7 +2,7 @@
  * API Client pour communiquer avec Cloudflare Worker
  */
 
-const API_URL = import.meta.env.VITE_API_URL || 'https://fasv3.calitek-junior.workers.dev'
+const API_URL = import.meta.env.VITE_API_URL || 'https://thegd33.calitek-junior.workers.dev'
 
 
 // ============ PRODUCTS ============
@@ -87,9 +87,8 @@ export const save = async (type, data) => {
   }
   
   if (type === 'settings') {
-    const url = data.key ? `${API_URL}/api/settings/${data.key}` : `${API_URL}/api/settings`
-    const response = await fetch(url, {
-      method: 'PUT',
+    const response = await fetch(`${API_URL}/api/settings`, {
+      method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(data)
     })
