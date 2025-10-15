@@ -61,7 +61,7 @@ const Categories = () => {
 
   return (
     <div className="min-h-screen cosmic-bg">
-      <div className="pt-20 pb-32 px-4">
+<div className="pt-20 pb-8 px-4">
         <div className="max-w-7xl mx-auto">
           {/* Header */}
           <motion.div
