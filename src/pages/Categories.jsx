@@ -61,7 +61,7 @@ const Categories = () => {
 
   return (
     <div className="min-h-screen cosmic-bg">
-<div className="pt-20 pb-40 md:pb-8 px-4">
+<div className="pt-20 pb-32 md:pb-8 px-4">
         <div className="max-w-7xl mx-auto">
           {/* Header */}
           <motion.div
@@ -139,11 +139,11 @@ const CategoryCard = ({ category, index, count, gradient }) => {
         </div>
 
         {/* Info Section */}
-        <div className="p-6">
+        <div className="p-6 flex flex-col flex-grow">
           <h3 className="text-2xl font-bold text-theme-heading mb-2 group-hover:text-gradient transition-all">
             {category.name}
           </h3>
-          <p className="text-theme-secondary group-hover:text-theme transition-colors">
+          <p className="text-theme-secondary group-hover:text-theme transition-colors flex-grow">
             {category.description}
           </p>
           
