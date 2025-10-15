@@ -1,0 +1,18 @@
+INSERT OR REPLACE INTO categories (id, name, icon, description) VALUES
+('45', 'WEED HOLLANDAISE 🇳🇱', '🏷️', ''),
+('46', 'Cali top SHELF 5A🇺🇸', '🏷️', ''),
+('55', 'Fresh Frozen 🥶', '🏷️', ''),
+('56', 'Single Source 130/90u ⚫️', '🏷️', ''),
+('60', 'CALI BRAND 🇺🇸', '🏷️', ''),
+('63', 'CALI TOP SHELF 5A DISTRO 🇺🇸', '🏷️', ''),
+('65', 'EGGS 🥚', '🏷️', ''),
+('66', 'VAP USA 🇺🇸💨', '🏷️', ''),
+('67', 'CALI ORIGINAL 🇺🇸', '🏷️', ''),
+('68', 'TOP SHELF DISTRO 5A 🇺🇸', '🏷️', ''),
+('69', 'SINGLE SOURCE STATIC SOURCE USA 🇺🇸', '🏷️', ''),
+('70', 'Tout nos PSG STATIC USA 🇺🇸', '🏷️', ''),
+('71', '🇲🇦FRESH FROZEN🇮🇹', '🏷️', ''),
+('72', 'CALI PLATES REGULAR 🌞🌞🚀🚀🇺🇸🇺🇸🤴🤴', '🏷️', ''),
+('73', 'STATIC SIFT', '🏷️', ''),
+('74', 'FILTRER 120U 🇲🇦', '🏷️', ''),
+('75', 'KING FROZEN 🥶', '🏷️', '');

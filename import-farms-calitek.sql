@@ -1,0 +1,23 @@
+-- Insertion des farms CalitekV3
+INSERT OR REPLACE INTO farms (id, name, description, created_at) VALUES
+('20', '🇳🇱 NL COFFEE SHOP 🇳🇱', 'Production CALITEK', datetime('now')),
+('30', 'Cali top SHELF 🇺🇸', '', datetime('now')),
+('34', 'Sahas Terps 🚀', '', datetime('now')),
+('35', 'Wizzard Trees 🌳🪄', '', datetime('now')),
+('36', '🦀 THE TEN CO 🦀', '', datetime('now')),
+('37', 'Cali top SHELF distro 🇺🇸', '', datetime('now')),
+('38', 'Mariposa Farmz 🦋', '', datetime('now')),
+('39', 'POPEYE STATIC GROWER PSG FARMZ 🥚', '', datetime('now')),
+('40', '🥫PSG FARMZ🥫', '', datetime('now')),
+('41', 'Katrina Farmz usa 🇺🇸', '', datetime('now')),
+('42', 'DISTRO 4A ++ 🇺🇸🧑‍💻', '', datetime('now')),
+('43', 'CALI ALL BLACK FARMZ 🏴‍☠️', '', datetime('now')),
+('44', 'HASHIVA FARMZ 🇺🇸🔵', '', datetime('now')),
+('45', 'POPEYE STATIC GROWER Usa 🇺🇸🇺🇸🚀🚀🧑‍💻🧑‍💻 PSG FARMZ', '', datetime('now')),
+('46', '👑KINKS FARMS 👑', '', datetime('now')),
+('47', 'REGULAR EDITION ‼️‼️🦈', '', datetime('now')),
+('48', 'CALI PLATES PREMIUM 🌞🌞🚀🚀🦈🇺🇸🇺🇸', '', datetime('now')),
+('49', 'CALIPLATE PRENIUM STATIC 🖤', '', datetime('now')),
+('50', 'CALIPLATE REGULAR EDIDTION ☑️', '', datetime('now')),
+('51', 'SASUKER FARM 🇲🇦', '', datetime('now')),
+('52', 'NO FARM 🇲🇦', '', datetime('now'));

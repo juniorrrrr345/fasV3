@@ -1,0 +1,12 @@
+name = "fasv3"
+main = "worker/index.js"
+compatibility_date = "2024-01-01"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "fasv3-db"
+database_id = "824cfc6d-3c9a-4dc8-9aba-78a073611707"
+
+[[r2_buckets]]
+binding = "R2"
+bucket_name = "fasv3-media"

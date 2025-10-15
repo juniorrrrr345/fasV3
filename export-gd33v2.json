@@ -1,0 +1,485 @@
+{
+  "products": [
+    {
+      "id": "31",
+      "name": "OLIVE FROZEN PREMIUM 🔥💨",
+      "description": "VOS OLIVES DE FROZEN PRÉFÉRÉES SONT DE RETOUR DU MIEL 🍯 🍫",
+      "category": "FROZEN PREMIUM + 🇲🇦 🍯",
+      "farm": "FROZEN NO FARM 🧊🍯",
+      "photo": "https://pub-53af7ff6cf154e87af25e68525a4bf74.r2.dev/1760463319145-1760117438978-icnreb2izun.jpeg",
+      "video": "https://pub-53af7ff6cf154e87af25e68525a4bf74.r2.dev/1760463319829-1760117572445-lnc5qa7l98b.mp4",
+      "variants": [
+        {
+          "name": "5g",
+          "price": "70€"
+        },
+        {
+          "name": "10g",
+          "price": "130€"
+        }
+      ],
+      "price": "70€",
+      "createdAt": "2025-10-14T14:25:43.326Z",
+      "updatedAt": "2025-10-14T17:35:20.424Z",
+      "medias": []
+    },
+    {
+      "id": "30",
+      "name": "GEORGIA PIE 🍑",
+      "description": "🥧 GEORGIA PIE Genetics : Gelatti x Kush Mints",
+      "category": "WEED 🇺🇸🍀",
+      "farm": "USA WEED",
+      "photo": "https://pub-53af7ff6cf154e87af25e68525a4bf74.r2.dev/1760463321392-1759934475428-3v0x990q73a.jpeg",
+      "video": "https://pub-53af7ff6cf154e87af25e68525a4bf74.r2.dev/1760463322834-1759934710979-sw24qa6ga6.mp4",
+      "variants": [
+        {
+          "name": "5g",
+          "price": "60€"
+        },
+        {
+          "name": "10g",
+          "price": "100€"
+        }
+      ],
+      "price": "60€",
+      "createdAt": "2025-10-14T14:25:43.149Z",
+      "updatedAt": "2025-10-14T17:35:23.497Z",
+      "medias": []
+    },
+    {
+      "id": "29",
+      "name": "SUPER BOOF 💥",
+      "description": "💥 SUPER BOOF Genetics : Black Cherry Punch x Tropicana Cookies",
+      "category": "WEED 🇺🇸🍀",
+      "farm": "USA WEED",
+      "photo": "https://pub-53af7ff6cf154e87af25e68525a4bf74.r2.dev/1760463324363-1759933918596-0rddo14qdjkq.jpeg",
+      "video": "https://pub-53af7ff6cf154e87af25e68525a4bf74.r2.dev/1760463325281-1759933966452-z90da3wm9y.mp4",
+      "variants": [
+        {
+          "name": "5g",
+          "price": "60€"
+        },
+        {
+          "name": "10g",
+          "price": "100€"
+        }
+      ],
+      "price": "60€",
+      "createdAt": "2025-10-14T14:25:42.957Z",
+      "updatedAt": "2025-10-14T17:35:26.045Z",
+      "medias": []
+    },
+    {
+      "id": "28",
+      "name": "DAWG BREATH 🌪️💨",
+      "description": "🌬️ DAWG BREATH ✨ Genetics : OG Kush x Mendo Breath",
+      "category": "WEED 🇺🇸🍀",
+      "farm": "USA WEED",
+      "photo": "https://pub-53af7ff6cf154e87af25e68525a4bf74.r2.dev/1760463326942-1759930481531-zh9y6y8d2y.webp",
+      "video": "https://pub-53af7ff6cf154e87af25e68525a4bf74.r2.dev/1760463327896-1759930589974-bnqqkdw2az.mp4",
+      "variants": [
+        {
+          "name": "5g",
+          "price": "60€"
+        },
+        {
+          "name": "10g",
+          "price": "100€"
+        }
+      ],
+      "price": "60€",
+      "createdAt": "2025-10-14T14:25:42.780Z",
+      "updatedAt": "2025-10-14T17:35:28.740Z",
+      "medias": []
+    },
+    {
+      "id": "27",
+      "name": "Purple space cookie 🍪🌌",
+      "description": "Purple Space Cookie 🪐 🍪 Un voyage galactique en une bouffée.",
+      "category": "WEED 🇺🇸🍀",
+      "farm": "USA WEED",
+      "photo": "https://pub-53af7ff6cf154e87af25e68525a4bf74.r2.dev/1760463329609-1759447793326-4bl1lfzndi5.jpeg",
+      "video": "https://pub-53af7ff6cf154e87af25e68525a4bf74.r2.dev/1760463330566-1759447801804-uho78cbyrq.mp4",
+      "variants": [
+        {
+          "name": "5g",
+          "price": "60€"
+        },
+        {
+          "name": "10g",
+          "price": "100€"
+        }
+      ],
+      "price": "60€",
+      "createdAt": "2025-10-14T14:25:42.587Z",
+      "updatedAt": "2025-10-14T17:35:31.242Z",
+      "medias": []
+    },
+    {
+      "id": "26",
+      "name": "WHITE RUNTZ 🍭",
+      "description": "White Runtz 🍭 L'alliance parfaite entre douceur sucrée et relaxation profonde.",
+      "category": "WEED 🇺🇸🍀",
+      "farm": "USA WEED",
+      "photo": "https://pub-53af7ff6cf154e87af25e68525a4bf74.r2.dev/1760463332096-1759447305046-joo4uzgy6o.jpeg",
+      "video": "https://pub-53af7ff6cf154e87af25e68525a4bf74.r2.dev/1760463333499-1759447928719-7y8bcr19ewh.mp4",
+      "variants": [
+        {
+          "name": "5g",
+          "price": "60€"
+        },
+        {
+          "name": "10g",
+          "price": "100€"
+        }
+      ],
+      "price": "60€",
+      "createdAt": "2025-10-14T14:25:42.410Z",
+      "updatedAt": "2025-10-14T17:35:34.370Z",
+      "medias": []
+    },
+    {
+      "id": "25",
+      "name": "JAUNE MOUSSEU 10/10 🍫🥇🧽",
+      "description": "JAUNE MOUSSEUX GROSSE ODEUR , BON GOUT 🍫🇲🇦",
+      "category": "MOUSSEU 10/10 🧽🍫🥇",
+      "farm": "JAUNE MOUSSEU 🧽 🍫",
+      "photo": "https://pub-53af7ff6cf154e87af25e68525a4bf74.r2.dev/1760463335251-1760219067131-d0muyay5ifo.jpeg",
+      "video": "https://pub-53af7ff6cf154e87af25e68525a4bf74.r2.dev/1760463336231-1760217587859-ghg3uknww.mp4",
+      "variants": [
+        {
+          "name": "10g",
+          "price": "60€"
+        },
+        {
+          "name": "20g",
+          "price": "100€"
+        },
+        {
+          "name": "50g",
+          "price": "220€"
+        },
+        {
+          "name": "100g",
+          "price": "320€"
+        }
+      ],
+      "price": "60€",
+      "createdAt": "2025-10-14T14:25:42.218Z",
+      "updatedAt": "2025-10-14T17:35:37.123Z",
+      "medias": []
+    },
+    {
+      "id": "24",
+      "name": "CALI MOUNTAIN FARM 🍫🍯",
+      "description": "🌱 Cali Mountain Premium – 120u Farm 🍯",
+      "category": "FILTRE PREMIUM 🇲🇦⚡️",
+      "farm": "CALI MOUNTAIN FARM 🍯",
+      "photo": "https://pub-53af7ff6cf154e87af25e68525a4bf74.r2.dev/1760463338118-1759024292800-lhyq8b2dqp.jpeg",
+      "video": "https://pub-53af7ff6cf154e87af25e68525a4bf74.r2.dev/1760463339097-1759287360387-m9cntdkbm7g.mp4",
+      "variants": [
+        {
+          "name": "10g",
+          "price": "100€"
+        },
+        {
+          "name": "25g",
+          "price": "230€"
+        }
+      ],
+      "price": "100€",
+      "createdAt": "2025-10-14T14:25:42.045Z",
+      "updatedAt": "2025-10-14T17:35:40.096Z",
+      "medias": []
+    },
+    {
+      "id": "22",
+      "name": "ACAI X BLACK CHERRY FUNK 🍇💥",
+      "description": "DUR CASSANT CE FILTRE PREMIUM AU GOUT SAVOUREUX 🍇💥🔥",
+      "category": "FILTRE PREMIUM 🇲🇦⚡️",
+      "farm": "FILTRE PREMIUM",
+      "photo": "https://pub-53af7ff6cf154e87af25e68525a4bf74.r2.dev/1760463341211-1758572914954-m6q8ztkohy.jpeg",
+      "video": "https://pub-53af7ff6cf154e87af25e68525a4bf74.r2.dev/1760463342521-1759287757934-7s37l8zcs7v.mp4",
+      "variants": [
+        {
+          "name": "5g",
+          "price": "60€"
+        },
+        {
+          "name": "10g",
+          "price": "100€"
+        }
+      ],
+      "price": "60€",
+      "createdAt": "2025-10-14T14:25:41.869Z",
+      "updatedAt": "2025-10-14T17:35:43.282Z",
+      "medias": []
+    },
+    {
+      "id": "21",
+      "name": "CRITICAL KUSH X MINTZ 🔥",
+      "description": "FILTRE PREMIUM CRITICAL X KUSH DUR CASSANT 🔥💥",
+      "category": "FILTRE PREMIUM 🇲🇦⚡️",
+      "farm": "FILTRE PREMIUM",
+      "photo": "https://pub-53af7ff6cf154e87af25e68525a4bf74.r2.dev/1760463344289-1758572818718-4aosa1kv6wu.jpeg",
+      "video": "https://pub-53af7ff6cf154e87af25e68525a4bf74.r2.dev/1760463345283-1758572823709-urq3muxbq2c.mp4",
+      "variants": [
+        {
+          "name": "5g",
+          "price": "60€"
+        },
+        {
+          "name": "10g",
+          "price": "100€"
+        },
+        {
+          "name": "100g",
+          "price": "480€"
+        }
+      ],
+      "price": "60€",
+      "createdAt": "2025-10-14T14:25:41.706Z",
+      "updatedAt": "2025-10-14T17:35:45.752Z",
+      "medias": []
+    },
+    {
+      "id": "20",
+      "name": "DISPO CALI WIZARD TREES 🇺🇸🔮",
+      "description": "🇺🇸 Californian Farm d'exception 🇺🇸 4 strains disponible",
+      "category": "CALI USA D'EXCEPTION 🇺🇸",
+      "farm": "WIZARD TREES",
+      "photo": "https://pub-53af7ff6cf154e87af25e68525a4bf74.r2.dev/1760463346616-1758112809460-1shs848bxopj.webp",
+      "video": "https://pub-53af7ff6cf154e87af25e68525a4bf74.r2.dev/1760463347555-1758112869045-vtxzi58w2o.mp4",
+      "variants": [
+        {
+          "name": "3,5 G",
+          "price": "110€"
+        }
+      ],
+      "price": "110€",
+      "createdAt": "2025-10-14T14:25:41.542Z",
+      "updatedAt": "2025-10-14T17:35:48.011Z",
+      "medias": []
+    },
+    {
+      "id": "19",
+      "name": "VAPES THC SKY LAB 💨🔥",
+      "description": "VAPES THC SKY LAB 💨 Très forte en THC pour les gros fumeurs 🌪️",
+      "category": "VAPES THC 🔥",
+      "farm": "VAPES THC 🇺🇸💨",
+      "photo": "https://pub-53af7ff6cf154e87af25e68525a4bf74.r2.dev/1760463348829-1757780084427-iv1z94t3bce.jpeg",
+      "video": "https://pub-53af7ff6cf154e87af25e68525a4bf74.r2.dev/1760463349687-1757780109658-5y07ty05ao.mp4",
+      "variants": [
+        {
+          "name": "1 VAPES",
+          "price": "60€"
+        }
+      ],
+      "price": "60€",
+      "createdAt": "2025-10-14T14:25:41.370Z",
+      "updatedAt": "2025-10-14T17:35:50.304Z",
+      "medias": []
+    },
+    {
+      "id": "6",
+      "name": "CALI JAUNE USA 🇺🇸⚡️",
+      "description": "Jaune mousseux from USA CALI DRY SIFT PREMIUM 🥵🍯🇺🇸",
+      "category": "CALI JAUNE USA 🇺🇸",
+      "farm": "LA MOUSSE USA 🇺🇸🧽",
+      "photo": "https://pub-53af7ff6cf154e87af25e68525a4bf74.r2.dev/1760463618916-télécharger.jpg",
+      "video": "https://pub-53af7ff6cf154e87af25e68525a4bf74.r2.dev/1760463614973-upload_1755647731660.mp4",
+      "variants": [
+        {
+          "name": "10g",
+          "price": "60€"
+        },
+        {
+          "name": "20g",
+          "price": "100€"
+        },
+        {
+          "name": "50g",
+          "price": "240€"
+        },
+        {
+          "name": "100g",
+          "price": "400€"
+        }
+      ],
+      "price": "60€",
+      "createdAt": "2025-10-14T14:25:40.931Z",
+      "updatedAt": "2025-10-14T17:40:20.957Z",
+      "medias": []
+    }
+  ],
+  "categories": [
+    {
+      "id": "11",
+      "name": "FROZEN 🇲🇦",
+      "icon": "🧊",
+      "description": ""
+    },
+    {
+      "id": "4",
+      "name": "WEED 🇺🇸🍀",
+      "icon": "🍀",
+      "description": ""
+    },
+    {
+      "id": "5",
+      "name": "FILTRE PREMIUM 🇲🇦⚡️",
+      "icon": "⚡️",
+      "description": ""
+    },
+    {
+      "id": "12",
+      "name": "VAPES THC 🔥",
+      "icon": "🔥",
+      "description": ""
+    },
+    {
+      "id": "6",
+      "name": "FROZEN PREMIUM + 🇲🇦 🍯",
+      "icon": "🍯",
+      "description": ""
+    },
+    {
+      "id": "13",
+      "name": "CALI USA D'EXCEPTION 🇺🇸",
+      "icon": "🇺🇸",
+      "description": ""
+    },
+    {
+      "id": "7",
+      "name": "CALI JAUNE USA 🇺🇸",
+      "icon": "🇺🇸",
+      "description": ""
+    },
+    {
+      "id": "14",
+      "name": "MOUSSEU 10/10 🧽🍫🥇",
+      "icon": "🧽",
+      "description": ""
+    },
+    {
+      "id": "8",
+      "name": "Hash 🍫",
+      "icon": "🍫",
+      "description": ""
+    },
+    {
+      "id": "9",
+      "name": "Weed 🥗",
+      "icon": "🥗",
+      "description": "hhh"
+    }
+  ],
+  "farms": [
+    {
+      "id": "2",
+      "name": "USA WEED",
+      "image": null,
+      "description": null
+    },
+    {
+      "id": "3",
+      "name": "FILTRE PREMIUM",
+      "image": null,
+      "description": null
+    },
+    {
+      "id": "4",
+      "name": "FROZEN NO FARM 🧊🍯",
+      "image": null,
+      "description": null
+    },
+    {
+      "id": "9",
+      "name": "WIZARD TREES",
+      "image": null,
+      "description": null
+    },
+    {
+      "id": "10",
+      "name": "CALI MOUNTAIN FARM 🍯",
+      "image": null,
+      "description": null
+    },
+    {
+      "id": "7",
+      "name": "HASH CONNECTION 🤩🍫🍯",
+      "image": null,
+      "description": null
+    },
+    {
+      "id": "11",
+      "name": "JAUNE MOUSSEU 🧽 🍫",
+      "image": null,
+      "description": null
+    },
+    {
+      "id": "8",
+      "name": "VAPES THC 🇺🇸💨",
+      "image": null,
+      "description": null
+    }
+  ],
+  "socials": [
+    {
+      "id": "1760453565335",
+      "name": "Whatsapp",
+      "icon": "🌐",
+      "description": "Rejoignez nous",
+      "url": "https://wa.me/+33629121135"
+    },
+    {
+      "id": "1760463540200",
+      "name": "Potato",
+      "icon": "🥔",
+      "description": "Rejoignez Nous",
+      "url": "https://ptdl159.org/oglegacy"
+    },
+    {
+      "id": "1760463569776",
+      "name": "Instagram",
+      "icon": "📸",
+      "description": "Abonne toi ",
+      "url": "https://www.instagram.com/og_legacy75?igsh=MTJ0ZDl4c2NkOGF1cA=="
+    }
+  ],
+  "settings": {
+    "backgroundImage": "https://pub-53af7ff6cf154e87af25e68525a4bf74.r2.dev/5c54d1ec-bb77-454f-af96-7203e4e0d7e0.jpeg",
+    "titleFont": "Righteous",
+    "orderLink": "https://wa.me/33629121135",
+    "orderButtonText": "Commander",
+    "sections": {
+      "key": "sections",
+      "sections": [
+        {
+          "icon": "https://pub-53af7ff6cf154e87af25e68525a4bf74.r2.dev/1760462813911-télécharger.jpg",
+          "title": "INFORMATIONS",
+          "content": "📍CHEZ NOUS TU PEUX COMMANDER POUR TE FAIRE LIVRER À DOMICILE DE 14H à 02H📍\n\n🚚 PROFITEZ DE NOTRE SERVICE DE LIVRAISON\n\nOU\n\n\n📍PASSEZ RÉCUPÉRER SUR PLACE 92 DE 12H à 00H\n\nÀ 10 MINUTES DE PARIS LIGNE 13\n\n4 MINUTE À PIED DE LA STATION\n\n( L’adresse change a chaque fois )✅✅⚡️\n\nLIVRAISON DISPO 95/78/92/93/91/94/75/77/60\n\nCANAL DE SECOUR : https://t.me/oglegacysecour"
+        }
+      ],
+      "updatedAt": "2025-10-14T17:56:24.371Z"
+    },
+    "general": {
+      "id": "general",
+      "key": "general",
+      "shopName": "OGLEGACY",
+      "heroTitle1": "OGLEGACY",
+      "heroTitle2": "BIENVENUE CHEZ ",
+      "heroTitle3": "OG LEGACY COFFEE 🔥🌿",
+      "backgroundImage": "https://pub-53af7ff6cf154e87af25e68525a4bf74.r2.dev/1760462527377-5c54d1ec-bb77-454f-af96-7203e4e0d7e0.jpeg",
+      "updatedAt": "2025-10-14T17:56:24.280Z",
+      "textColor": "#ffffff",
+      "headingColor": "#ffffff",
+      "accentColor": "#000000",
+      "heroTitle": "OG LEGACY",
+      "heroSubtitle": "CACA",
+      "secondaryTextColor": "#fefbfb",
+      "maintenanceMode": false,
+      "maintenanceMessage": "bebe je taime\n"
+    }
+  }
+}
