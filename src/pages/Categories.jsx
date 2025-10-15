@@ -112,11 +112,11 @@ const CategoryCard = ({ category, index, count, gradient }) => {
       animate={{ opacity: 1, y: 0 }}
       transition={{ delay: index * 0.1 }}
       whileHover={{ scale: 1.05, y: -10 }}
-      className="neon-border rounded-2xl overflow-hidden bg-slate-900/50 backdrop-blur-sm group cursor-pointer"
+      className="neon-border rounded-2xl overflow-hidden bg-slate-900/50 backdrop-blur-sm group cursor-pointer h-full flex flex-col"
     >
-      <Link to={`/products?category=${category.id}`} className="block">
+      <Link to={`/products?category=${category.id}`} className="block h-full flex flex-col">
         {/* Icon/Image Section */}
-        <div className={`relative h-48 flex items-center justify-center ${category.icon && category.icon.startsWith('http') ? 'bg-slate-800' : `bg-gradient-to-br ${gradient}`} overflow-hidden`}>
+        <div className={`relative h-48 flex items-center justify-center ${category.icon && category.icon.startsWith('http') ? 'bg-slate-800' : `bg-gradient-to-br ${gradient}`} overflow-hidden flex-shrink-0`}>
           {category.icon && category.icon.startsWith('http') ? (
             <img 
               src={category.icon} 
