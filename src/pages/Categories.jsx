@@ -114,7 +114,7 @@ const CategoryCard = ({ category, index, count, gradient }) => {
       whileHover={{ scale: 1.05, y: -10 }}
       className="neon-border rounded-2xl overflow-hidden bg-slate-900/50 backdrop-blur-sm group cursor-pointer"
     >
-      <Link to="/products" className="block">
+      <Link to={`/products?category=${category.id}`} className="block">
         {/* Icon/Image Section */}
         <div className={`relative h-48 flex items-center justify-center ${category.icon && category.icon.startsWith('http') ? 'bg-slate-800' : `bg-gradient-to-br ${gradient}`} overflow-hidden`}>
           {category.icon && category.icon.startsWith('http') ? (
