@@ -91,7 +91,7 @@ const Categories = () => {
                   key={category.id} 
                   category={category} 
                   index={index}
-                  count={productCounts[category.name] || 0}
+               count={productCounts[String(category.id)] || productCounts[Number(category.id)] || 0}
                   gradient={gradients[index % gradients.length]}
                 />
               ))}
