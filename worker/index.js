@@ -129,7 +129,7 @@ async function handleInit(env, corsHeaders) {
         medias TEXT,
         variants TEXT,
         price TEXT,
-       created_at TEXT,
+        created_at TEXT,
         updated_at TEXT
       )
     `).run()
@@ -174,7 +174,7 @@ async function handleInit(env, corsHeaders) {
         id TEXT PRIMARY KEY,
         username TEXT NOT NULL UNIQUE,
         password TEXT NOT NULL,
-       created_at TEXT,
+        created_at TEXT,
         updated_at TEXT
       )
     `).run()
@@ -188,7 +188,7 @@ async function handleInit(env, corsHeaders) {
       const defaultAdminId = crypto.randomUUID()
       const now = new Date().toISOString()
       await env.DB.prepare(`
-        INSERT INTO admin_users (id, username, password,created_at, updated_at)
+        INSERT INTO admin_users (id, username, password, created_at, updated_at)
         VALUES (?, ?, ?, ?, ?)
       `).bind(defaultAdminId, defaultUsername, defaultPassword, now, now).run()
     }
@@ -208,23 +208,105 @@ async function handleInit(env, corsHeaders) {
 // Helper pour parser JSON en toute sécurité
 function safeJSONParse(str, defaultValue = []) {
   if (!str) return defaultValue;
+  
   try {
-    return JSON.parse(str);
+    const parsed = JSON.parse(str);
+    
+    // Si après le parse on a encore une string, parser à nouveau (double encoding)
+    if (typeof parsed === 'string') {
+      return safeJSONParse(parsed, defaultValue);
+    }
+    
+    return parsed;
   } catch (e) {
+    // Essayer de réparer le JSON cassé (format {5g:80} ou "{"5g":80,10g":160}")
+    if (typeof str === 'string' && str.includes(':')) {
+      try {
+        // Enlever les guillemets extérieurs en trop
+        let cleaned = str.trim();
+        if (cleaned.startsWith('"') && cleaned.endsWith('"')) {
+          cleaned = cleaned.slice(1, -1);
+        }
+        
+        // Ajouter des guillemets autour de TOUTES les clés sans guillemets
+        // {5g:80,10g:160} → {"5g":80,"10g":160}
+        const fixed = cleaned.replace(/([{,]\s*)([^":\s]+)(\s*):/g, '$1"$2"$3:');
+        
+        const result = JSON.parse(fixed);
+        return result;
+      } catch (e2) {
+        console.error('JSON parse error even after fix:', str, e2);
+        return defaultValue;
+      }
+    }
     console.error('JSON parse error:', str);
     return defaultValue;
   }
 }
 
-async function getProducts(env, corsHeaders) {
-  const { results } = await env.DB.prepare('SELECT * FROM products ORDER BYcreated_at DESC').all()
+// Convertir prices (objet) en variants (tableau)
+function convertPricesToVariants(prices) {
+  if (!prices) return [];
   
-  // Parse variants and medias JSON de manière sécurisée
-  const products = results.map(p => ({
+  const pricesObj = typeof prices === 'string' ? safeJSONParse(prices, {}) : prices;
+  if (!pricesObj || typeof pricesObj !== 'object') return [];
+  
+  return Object.entries(pricesObj).map(([name, price]) => ({
+    name,
+    price: typeof price === 'number' ? `${price}€` : price.toString()
+  }));
+}
+
+// Transformer un produit pour qu'il ait toujours des variants
+function transformProduct(p) {
+  let variants = safeJSONParse(p.variants, null);
+  
+  // Si variants est un OBJET (format {name: price}), le convertir en tableau
+  if (variants && typeof variants === 'object' && !Array.isArray(variants)) {
+    // C'est un objet de prix, convertir en tableau
+    variants = Object.entries(variants).map(([name, price]) => ({
+      name,
+      price: typeof price === 'number' ? `${price}€` : String(price)
+    }));
+  } else if (!Array.isArray(variants) || variants.length === 0) {
+    // Sinon si variants est vide, essayer prices
+    const pricesData = typeof p.prices === 'string' ? safeJSONParse(p.prices, null) : p.prices;
+    if (pricesData) {
+      variants = convertPricesToVariants(pricesData);
+    }
+  }
+  
+  // Si toujours pas de variants et qu'on a un price, créer un variant par défaut
+  if (!variants || variants.length === 0) {
+    if (p.price && p.price !== 0 && p.price !== '0') {
+      variants = [{ name: 'Standard', price: `${p.price}€` }];
+    } else {
+      variants = [];
+    }
+  }
+  
+  // Normaliser les noms de colonnes (supporter ancienne et nouvelle structure)
+  return {
     ...p,
-    variants: safeJSONParse(p.variants, []),
-    medias: safeJSONParse(p.medias, [])
-  }))
+    id: p.id,
+    name: p.name,
+    description: p.description,
+    category: p.category || p.category_id,
+    farm: p.farm || p.farm_id,
+    photo: p.photo || p.image_url,
+    video: p.video || p.video_url,
+    variants,
+    medias: safeJSONParse(p.medias, []),
+    price: variants.length > 0 ? variants[0].price : (p.price || 'N/A'),
+    prices: typeof p.prices === 'string' ? safeJSONParse(p.prices, null) : p.prices
+  };
+}
+
+async function getProducts(env, corsHeaders) {
+  const { results } = await env.DB.prepare('SELECT * FROM products ORDER BY created_at DESC').all()
+  
+  // Transformer les produits pour avoir toujours des variants
+  const products = results.map(transformProduct)
 
   return new Response(JSON.stringify(products), {
     headers: { ...corsHeaders, 'Content-Type': 'application/json' }
@@ -241,11 +323,7 @@ async function getProduct(id, env, corsHeaders) {
     })
   }
 
-  return new Response(JSON.stringify({
-    ...product,
-    variants: safeJSONParse(product.variants, []),
-    medias: safeJSONParse(product.medias, [])
-  }), {
+  return new Response(JSON.stringify(transformProduct(product)), {
     headers: { ...corsHeaders, 'Content-Type': 'application/json' }
   })
 }
@@ -255,7 +333,7 @@ async function createProduct(request, env, corsHeaders) {
   const id = data.id || Date.now().toString()
   
   await env.DB.prepare(`
-    INSERT OR REPLACE INTO products (id, name, description, category, farm, photo, video, medias, variants, price,created_at, updated_at)
+    INSERT OR REPLACE INTO products (id, name, description, category, farm, photo, video, medias, variants, price, created_at, updated_at)
     VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
   `).bind(
     id,
@@ -268,7 +346,7 @@ async function createProduct(request, env, corsHeaders) {
     JSON.stringify(data.medias || []),
     JSON.stringify(data.variants || []),
     data.price,
-    data.createdAt || new Date().toISOString(),
+    data.created_at || new Date().toISOString(),
     new Date().toISOString()
   ).run()
 
@@ -281,7 +359,7 @@ async function updateProduct(id, request, env, corsHeaders) {
   const data = await request.json()
   
   await env.DB.prepare(`
-    INSERT OR REPLACE INTO products (id, name, description, category, farm, photo, video, medias, variants, price,created_at, updated_at)
+    INSERT OR REPLACE INTO products (id, name, description, category, farm, photo, video, medias, variants, price, created_at, updated_at)
     VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
   `).bind(
     id,
@@ -294,7 +372,7 @@ async function updateProduct(id, request, env, corsHeaders) {
     JSON.stringify(data.medias || []),
     JSON.stringify(data.variants || []),
     data.price,
-    data.createdAt || new Date().toISOString(),
+    data.created_at || new Date().toISOString(),
     new Date().toISOString()
   ).run()
 
@@ -586,7 +664,7 @@ async function loginAdmin(request, env, corsHeaders) {
 
 // ============ ADMIN USERS ============
 async function getAdminUsers(env, corsHeaders) {
-  const { results } = await env.DB.prepare('SELECT id, username,created_at, updated_at FROM admin_users ORDER BYcreated_at DESC').all()
+  const { results } = await env.DB.prepare('SELECT id, username, created_at, updated_at FROM admin_users ORDER BY created_at DESC').all()
   
   return new Response(JSON.stringify(results), {
     headers: { ...corsHeaders, 'Content-Type': 'application/json' }
@@ -612,7 +690,7 @@ async function createAdminUser(request, env, corsHeaders) {
     }
     
     await env.DB.prepare(`
-      INSERT INTO admin_users (id, username, password,created_at, updated_at)
+      INSERT INTO admin_users (id, username, password, created_at, updated_at)
       VALUES (?, ?, ?, ?, ?)
     `).bind(id, data.username, data.password, now, now).run()
 
@@ -729,7 +807,7 @@ async function uploadToR2(request, env, corsHeaders) {
       }
     })
 
-const url = `https://pub-f470c04188bb475099ee04701b1a42db.r2.dev/${filename}`
+    const url = `https://pub-f470c04188bb475099ee04701b1a42db.r2.dev/${filename}`
 
     return new Response(JSON.stringify({ url, filename }), {
       headers: { ...corsHeaders, 'Content-Type': 'application/json' }
