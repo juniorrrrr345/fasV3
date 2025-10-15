@@ -13,9 +13,9 @@ const Footer = () => {
   ]
 
   return (
-    <footer className="fixed bottom-0 left-0 right-0 z-50 bg-black/70 backdrop-blur-md border-t border-white/10 sm:relative md:fixed">
+    <footer className="fixed bottom-0 left-0 right-0 z-50 bg-black/70 backdrop-blur-md border-t border-white/10 sm:relative md:fixed sm:mb-4">
       <nav className="max-w-7xl mx-auto px-4">
-        <div className="flex items-center justify-around py-4 sm:py-6">
+        <div className="flex items-center justify-around py-6 sm:py-8">
           {navItems.map((item) => {
             const isActive = location.pathname === item.to
             
