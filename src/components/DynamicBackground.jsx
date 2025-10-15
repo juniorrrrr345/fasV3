@@ -28,10 +28,11 @@ const DynamicBackground = () => {
         document.body.style.backgroundImage = `url(${backgroundImage})`
         document.body.style.backgroundSize = 'cover'
         document.body.style.backgroundPosition = 'center'
-        document.body.style.backgroundAttachment = 'scroll'
+        document.body.style.backgroundAttachment = 'fixed'
         document.body.style.backgroundRepeat = 'no-repeat'
         document.body.style.willChange = 'auto'
         document.body.style.position = 'relative'
+        document.body.style.zIndex = '-1'
         
         // Ajouter une classe pour identifier qu'une image de fond est active
         document.body.classList.add('has-background-image')

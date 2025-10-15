@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useSearchParams } from 'react-router-dom'
 import { motion, AnimatePresence } from 'framer-motion'
 import Footer from '../components/Footer'
 
 const Products = () => {
+  const [searchParams, setSearchParams] = useSearchParams()
   const [products, setProducts] = useState([])
   const [allProducts, setAllProducts] = useState([])
   const [categories, setCategories] = useState([])
@@ -18,6 +19,19 @@ const Products = () => {
   useEffect(() => {
     fetchData()
   }, [])
+
+  // Gérer les paramètres URL pour le filtrage automatique
+  useEffect(() => {
+    const categoryParam = searchParams.get('category')
+    const farmParam = searchParams.get('farm')
+    
+    if (categoryParam) {
+      setSelectedCategory(categoryParam)
+    }
+    if (farmParam) {
+      setSelectedFarm(farmParam)
+    }
+  }, [searchParams])
 
   useEffect(() => {
     filterProducts()
@@ -70,6 +84,16 @@ const Products = () => {
     setSearchTerm('')
     setSelectedCategory('')
     setSelectedFarm('')
+    // Nettoyer l'URL
+    setSearchParams({})
+  }
+
+  // Mettre à jour l'URL quand les filtres changent
+  const updateURL = (newCategory, newFarm) => {
+    const params = new URLSearchParams()
+    if (newCategory) params.set('category', newCategory)
+    if (newFarm) params.set('farm', newFarm)
+    setSearchParams(params)
   }
 
   if (loading) {
@@ -95,10 +119,16 @@ const Products = () => {
           >
             <div className="inline-block bg-black/90 backdrop-blur-xl rounded-full px-16 py-10 border-2 border-white/30 shadow-[0_0_40px_rgba(0,0,0,0.8)] mb-8">
               <h1 className="text-5xl md:text-7xl font-bold mb-3 text-white">
-                Notre Boutique
+                {selectedCategory ? 
+                  categories.find(c => String(c.id) === String(selectedCategory))?.name || 'Notre Boutique' 
+                  : 'Notre Boutique'
+                }
               </h1>
               <p className="text-lg text-gray-300">
-                Découvrez notre sélection de produits choisis avec amour
+                {selectedCategory ? 
+                  `Produits de la catégorie ${categories.find(c => String(c.id) === String(selectedCategory))?.name || selectedCategory}` 
+                  : 'Découvrez notre sélection de produits choisis avec amour'
+                }
               </p>
             </div>
 
@@ -134,7 +164,10 @@ const Products = () => {
                       <label className="block text-gray-400 text-sm mb-2">Catégorie</label>
                       <select
                         value={selectedCategory}
-                        onChange={(e) => setSelectedCategory(e.target.value)}
+                        onChange={(e) => {
+                          setSelectedCategory(e.target.value)
+                          updateURL(e.target.value, selectedFarm)
+                        }}
                         className="w-full px-4 py-2 bg-black border border-gray-700 rounded-lg text-white focus:outline-none focus:border-gray-500"
                       >
                         <option value="">Toutes les catégories</option>
@@ -151,7 +184,10 @@ const Products = () => {
                       <label className="block text-gray-400 text-sm mb-2">Farm</label>
                       <select
                         value={selectedFarm}
-                        onChange={(e) => setSelectedFarm(e.target.value)}
+                        onChange={(e) => {
+                          setSelectedFarm(e.target.value)
+                          updateURL(selectedCategory, e.target.value)
+                        }}
                         className="w-full px-4 py-2 bg-black border border-gray-700 rounded-lg text-white focus:outline-none focus:border-gray-500"
                       >
                         <option value="">Toutes les farms</option>
