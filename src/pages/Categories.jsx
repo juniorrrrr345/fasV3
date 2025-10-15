@@ -19,11 +19,16 @@ const Categories = () => {
         
         // Charger les produits et compter par catégorie
         const products = await getAll('products')
-        const counts = {}
+              const counts = {}
         products.forEach(product => {
-          const cat = product.category
-          counts[cat] = (counts[cat] || 0) + 1
+          // Convertir en string pour éviter les problèmes de type
+          const cat = String(product.category || '')
+          if (cat) {
+            counts[cat] = (counts[cat] || 0) + 1
+          }
         })
+        console.log('Product counts par catégorie:', counts)
+        console.log('Categories:', cats)
         setProductCounts(counts)
       } catch (error) {
         console.error('Erreur lors du chargement des catégories:', error)
