@@ -35,19 +35,11 @@ const AdminOrderSettings = () => {
     setSaving(true)
 
     try {
-      // Sauvegarder directement via l'API
-      const response = await fetch('https://thegd33.calitek-junior.workers.dev/api/settings', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          orderLink: settings.orderLink,
-          orderButtonText: settings.orderButtonText
-        })
+      // Sauvegarder via la fonction save de l'API
+      await save('settings', {
+        orderLink: settings.orderLink,
+        orderButtonText: settings.orderButtonText
       })
-      
-      if (!response.ok) {
-        throw new Error('Erreur API')
-      }
       
       alert('✅ Paramètres de commande enregistrés avec succès !')
     } catch (error) {
