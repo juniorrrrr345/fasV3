@@ -61,7 +61,7 @@ const Categories = () => {
 
   return (
     <div className="min-h-screen cosmic-bg">
-<div className="pt-20 pb-8 px-4">
+<div className="pt-20 pb-32 px-4">
         <div className="max-w-7xl mx-auto">
           {/* Header */}
           <motion.div
@@ -112,11 +112,11 @@ const CategoryCard = ({ category, index, count, gradient }) => {
       animate={{ opacity: 1, y: 0 }}
       transition={{ delay: index * 0.1 }}
       whileHover={{ scale: 1.05, y: -10 }}
-      className="neon-border rounded-2xl overflow-hidden bg-slate-900/50 backdrop-blur-sm group cursor-pointer"
+      className="neon-border rounded-2xl overflow-hidden bg-slate-900/50 backdrop-blur-sm group cursor-pointer h-full flex flex-col"
     >
-      <Link to="/products" className="block">
+      <Link to={`/products?category=${category.id}`} className="block h-full flex flex-col">
         {/* Icon/Image Section */}
-        <div className={`relative h-48 flex items-center justify-center ${category.icon && category.icon.startsWith('http') ? 'bg-slate-800' : `bg-gradient-to-br ${gradient}`} overflow-hidden`}>
+        <div className={`relative h-48 flex items-center justify-center ${category.icon && category.icon.startsWith('http') ? 'bg-slate-800' : `bg-gradient-to-br ${gradient}`} overflow-hidden flex-shrink-0`}>
           {category.icon && category.icon.startsWith('http') ? (
             <img 
               src={category.icon} 
@@ -139,11 +139,11 @@ const CategoryCard = ({ category, index, count, gradient }) => {
         </div>
 
         {/* Info Section */}
-        <div className="p-6">
+        <div className="p-6 flex flex-col flex-grow">
           <h3 className="text-2xl font-bold text-theme-heading mb-2 group-hover:text-gradient transition-all">
             {category.name}
           </h3>
-          <p className="text-theme-secondary group-hover:text-theme transition-colors">
+          <p className="text-theme-secondary group-hover:text-theme transition-colors flex-grow">
             {category.description}
           </p>
           
